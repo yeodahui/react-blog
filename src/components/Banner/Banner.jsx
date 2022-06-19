@@ -6,7 +6,7 @@ export default function Banner() {
   return (
     <div className="banner">
       <div className="max-width">
-        <BannerContents />
+        <BannerContents page="main" />
       </div>
     </div>
   );
