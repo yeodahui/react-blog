@@ -4,10 +4,10 @@ import React from "react";
 export default function BannerContents({page}) {
   if (page === "main") {
     return (
-      <div class="banner-contents">
-        <p class="sub-text">React Blog</p>
-        <p class="main-text">My BLOG</p>
-        <p class="description">
+      <div className="banner-contents">
+        <p className="sub-text">React Blog</p>
+        <p className="main-text">My BLOG</p>
+        <p className="description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
           nostrum dolor provident beatae deserunt magnam, illo neque. Maiores
           ipsum commodi dolorum beatae aliquid laboriosam est
@@ -16,8 +16,8 @@ export default function BannerContents({page}) {
     );
   } else if (page === "post") {
     return (
-      <div class="banner-contents">
-        <p class="today">
+      <div className="banner-contents">
+        <p className="today">
           may <em>25</em> Wendsday
         </p>
       </div>

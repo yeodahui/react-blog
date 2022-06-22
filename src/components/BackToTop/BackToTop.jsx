@@ -7,7 +7,7 @@ const moveToTop = () => {
 
 export default function BackToTop() {
   return (
-    <button class="top-button" onClick={moveToTop}>
+    <button className="top-button" onClick={moveToTop}>
       TOP
     </button>
   );
