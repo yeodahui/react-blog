@@ -10,12 +10,19 @@ import iconModifyWhite from "../../../../assets/icon-modify-white.svg";
 export default function HeaderButtons() {
   const [login, setLogin] = useState("false");
 
-  function clickLogin() {
-    setLogin(!login);
+  function buttonClickHandler(event) {
+    const targetClassList = event.target.classList;
+
+    if (
+      targetClassList.contains("login") ||
+      targetClassList.contains("logout")
+    ) {
+      setLogin(!login);
+    }
   }
 
   return (
-    <ul>
+    <ul onClick={buttonClickHandler}>
       {login ? (
         <li className="profile-img">
           <a href="#">
@@ -27,18 +34,16 @@ export default function HeaderButtons() {
         <Button
           iconURL={login ? iconModifyWhite : iconLogin}
           value={login ? "Write" : "Login"}
-          colorClass={login ? null : "gray"}
+          color={login ? null : "gray"}
         />
       </li>
       <li>
         <Button
           iconURL={login ? iconLogout : iconRegister}
           value={login ? "Logout" : "Register"}
-          colorClass={login ? "white" : "gray"}
+          color={login ? "white" : "gray"}
         />
       </li>
-      <li></li>
-      <li></li>
     </ul>
   );
 }
