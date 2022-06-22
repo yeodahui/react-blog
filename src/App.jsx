@@ -5,7 +5,6 @@ import reset from "styled-reset";
 
 import Header from "./components/Layout/Header/Header";
 import Footer from "./components/Layout/Footer/Footer";
-import BackToTop from "./components/BackToTop/BackToTop";
 import Banner from "./components/Banner/Banner";
 
 import Home from "./pages/Home/Home";
@@ -138,15 +137,14 @@ body {
 function App() {
   return (
     <>
+      <GlobalStyle />
+      <Header />
+      <Banner />
       <BrowserRouter>
-        <GlobalStyle />
-        <Header />
-        <Banner />
         <Route exact path="/" component={Home} />
         <Route exact path="/post" component={Post} />
-        <Footer />
-        <BackToTop />
       </BrowserRouter>
+      <Footer />
     </>
   );
 }
