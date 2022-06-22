@@ -2,21 +2,20 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Author from "../Author/Author";
 import Category from "../Category/Category";
-import profileImgURL from "../../assets/profile.jpg";
 import "./postcard.css";
 
-export default function PostCard({postImgURL}) {
+export default function PostCard({postImgURL, author}) {
   return (
     <Link to="/post" className="post">
       <article>
-        <img src="https://via.placeholder.com/300.png/09f/fff" alt />
+        <img src={postImgURL} alt />
         <div className="contents-wrap">
           <Category />
           <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit</h3>
           <Author
-            progileImgURL={profileImgURL}
-            name={"Chilli"}
-            date="2022.05.25"
+            progileImgURL={author.profileImgURL}
+            name={author.name}
+            date={author.date}
           />
           <p class="post-description">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore
