@@ -1,6 +1,6 @@
 import React from "react";
 import PostList from "../../components/PostList/PostList";
-import PostCard from "../../components/PostCard/PostCard";
+import "./home.css";
 
 export default function Home() {
   return (
@@ -8,7 +8,6 @@ export default function Home() {
       <div className="max-width">
         <h2 className="a11y-hidden">Post</h2>
         <PostList />
-        <PostCard />
       </div>
     </main>
   );
