@@ -1,16 +1,19 @@
 import React from "react";
-import {BrowserRouter as Route} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 import {createGlobalStyle} from "styled-components";
 import reset from "styled-reset";
 
 import Header from "./components/Layout/Header/Header";
-import Main from "./components/Layout/Main/Main";
 import Footer from "./components/Layout/Footer/Footer";
 import BackToTop from "./components/BackToTop/BackToTop";
+import Banner from "./components/Banner/Banner";
+
+import Home from "./pages/Home/Home";
+import Post from "./pages/Post/Post";
 
 const GlobalStyle = createGlobalStyle`
 	${reset}
-  :root {
+	:root {
 	--main-color: rgb(55, 170, 236);
 	--main-rgb: 55, 171, 236;
 	--outline-border: rgb(55, 160, 236);
@@ -25,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
 	--gray-text: #6f6f6f;
 	--border-radius: 0.4em;
 }
+
 /* 공통 css */
 h1,
 a,
@@ -134,11 +138,15 @@ body {
 function App() {
   return (
     <>
-      <GlobalStyle />
-      <Header />
-      <Main />
-      <Footer />
-      <BackToTop />
+      <BrowserRouter>
+        <GlobalStyle />
+        <Header />
+        <Banner />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/post" component={Post} />
+        <Footer />
+        <BackToTop />
+      </BrowserRouter>
     </>
   );
 }
