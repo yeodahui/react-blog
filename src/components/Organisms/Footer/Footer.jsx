@@ -1,6 +1,6 @@
 import React from "react";
 import "./footer.css";
-import BackToTop from "../../BackToTop/BackToTop";
+import BackToTop from "../../Atoms/BackToTop/BackToTop";
 
 export default function Footer() {
   return (
