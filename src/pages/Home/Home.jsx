@@ -1,9 +1,9 @@
 import React from "react";
 import PostList from "../../components/Organisms/PostList/PostList";
 import About from "../../components/Modules/About/About";
-import "./home.module.css";
+import "./home.css";
 
-export default function Home(posts, user) {
+export default function Home({posts, user}) {
   return (
     <main>
       <div className="max-width">

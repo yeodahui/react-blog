@@ -1,10 +1,9 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import PostCard from "../../Modules/PostCard/PostCard";
-import "./postlist.module.css";
+import "./postlist.css";
 
-export default function PostList(posts) {
-
+export default function PostList({posts}) {
   return (
   <ul className="posts">
     {posts.map((post) => {

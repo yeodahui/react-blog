@@ -5,7 +5,7 @@ import iconRegister from "../../../assets/icon-register.svg";
 import iconLogout from "../../../assets/icon-logout.svg";
 import iconModifyWhite from "../../../assets/icon-modify-white.svg";
 
-export default function HeaderButtons(isLogined, loginHandler, profileImg) {
+export default function HeaderButtons({isLogined, loginHandler, profileImg}) {
 
   return (
     <ul onClick={loginHandler}>

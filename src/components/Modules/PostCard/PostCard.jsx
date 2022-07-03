@@ -1,22 +1,22 @@
 import React from "react";
 import Author from "../../Atoms/Author/Author";
 import Category from "../../Atoms/Category/Category";
-import "./postcard.module.css";
+import "./postcard.css";
 
-export default function PostCard({thumbnail, title, category, profileImg, userName, created, contents}) {
+export default function PostCard({post}) {
   return (
       <article>
-        <img src={thumbnail} alt="" />
+        <img src={post.thumbnail} alt="" />
         <div className="contents-wrap">
-          <Category categories={category} />
-          <h3>{title}</h3>
+          <Category categories={post.category} />
+          <h3>{post.title}</h3>
           <Author
-            progileImgURL={profileImg}
-            name={userName}
-            date={created}
+            progileImgURL={post.profileImg}
+            name={post.userName}
+            date={post.created}
           />
           <p className="post-description">
-            {contents[0].text}
+            {post.contents.text}
           </p>
         </div>
       </article>

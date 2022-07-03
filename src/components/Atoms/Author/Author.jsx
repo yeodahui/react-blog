@@ -1,7 +1,7 @@
 import React from "react";
 import "./author.css";
 
-export default function Author(name, profileImg, date) {
+export default function Author({name, profileImg, date}) {
   return (
     <dl className="author-wrap">
       <dt className="a11y-hidden">Author</dt>

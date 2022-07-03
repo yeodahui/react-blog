@@ -1,14 +1,13 @@
 import React from "react";
-import profileImgURL from "../../assets/profile.jpg";
 
-export default function About() {
+export default function About({email, profileImg, name, userInfo, categories, sns}) {
   return (
     <aside className="about">
       <h2>About Me</h2>
-      <img src={profileImgURL} alt="" className="user-profile" />
-      <p className="user-name">Chilli</p>
+      <img src={profileImg} alt="" className="user-profile" />
+      <p className="user-name">{name}</p>
       <p className="user-description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        {userInfo}
       </p>
     </aside>
   );

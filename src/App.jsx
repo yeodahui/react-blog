@@ -147,27 +147,24 @@ function App() {
 		async function getData() {
 			const response = await fetch(`${process.env.PUBLIC_URL}/data.json`);
 			const result = await response.json();
-			return result;
-		}
-
-		getData().then((data) => {
-			setData(data);
+			setData(result);
 			setIsLoaded(true);
-		});
+		}
+		getData()
 	}, [])
 
   return (
     <>
       <GlobalStyle />
-      <Header isLogined={isLogined} loginHandler={loginHandler} user={data.users[1]} />
-      <Banner bannerInfo={data.blog} />
-			<BrowserRouter>
 			{isLoaded && (
+				<BrowserRouter>
+					<Header isLogined={isLogined} loginHandler={loginHandler} user={data.users.filter(i => i.id === 1)} />
+					<Banner bannerInfo={data.blog} />
 				<Switch>
 					<Route exact path="/" render={() =>
 						<Home
 							posts={data.posts}
-							users={data.users[1]}
+							user={data.users.filter(i => i.id === 1)}
 						/>
 					} />
 					<Route exact path="/post/:id" render={() =>
@@ -176,8 +173,8 @@ function App() {
 						/>
 					} />
 				</Switch>
-			)}
       </BrowserRouter>
+			)}
       <Footer />
     </>
   );
