@@ -16,7 +16,7 @@ export default function PostCard({post}) {
             date={post.created}
           />
           <p className="post-description">
-            {post.contents.text}
+            {post.contents[0]["text"]}
           </p>
         </div>
       </article>
