@@ -12,7 +12,7 @@ export default function Header({isLogined, loginHandler, user}) {
             <img src={logo} alt="My Blog" />
           </a>
         </h1>
-        <HeaderButtons isLogined={isLogined} loginHandler={loginHandler} profileImg={user.profileImg}/>      </div>
+        <HeaderButtons isLogined={isLogined} loginHandler={loginHandler} profileImg={user[0]["profileImg"]}/>      </div>
     </header>
   );
 }

@@ -6,7 +6,9 @@ import iconLogout from "../../../assets/icon-logout.svg";
 import iconModifyWhite from "../../../assets/icon-modify-white.svg";
 
 export default function HeaderButtons({isLogined, loginHandler, profileImg}) {
-
+  console.log(isLogined)
+  console.log(loginHandler)
+  console.log(profileImg)
   return (
     <ul onClick={loginHandler}>
       {isLogined ? (
