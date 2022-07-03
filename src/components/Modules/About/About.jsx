@@ -3,7 +3,6 @@ import "./about.css"
 
 //{email, profileImg, name, userInfo, categories, sns}
 export default function About({user}) {
-  console.log(user.profileImg)
   return (
     <aside className="about">
       <h2>About Me</h2>
