@@ -1,6 +1,7 @@
 import React from "react";
-import PostList from "../../components/PostList/PostList";
-import "./home.css";
+import PostList from "../../components/Organisms/PostList/PostList";
+import About from "../../components/Modules/About/About";
+import "./home.module.css";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <div className="max-width">
         <h2 className="a11y-hidden">Post</h2>
         <PostList />
+        <About />
       </div>
     </main>
   );

@@ -1,10 +1,10 @@
 import React from "react";
 import "./category.css";
 
-export default function CategoryTag() {
+export default function Category() {
   return (
-    <dl class="category">
-      <dt class="a11y-hidden">Category</dt>
+    <dl className="category">
+      <dt className="a11y-hidden">Category</dt>
       <dd>Life</dd>
       <dd>Style</dd>
     </dl>

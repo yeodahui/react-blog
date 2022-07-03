@@ -1,9 +1,9 @@
 import React from "react";
-import HeaderButtons from "./HeaderButtons/HeaderButtons";
+import HeaderButtons from "../../Modules/HeaderButtons/HeaderButtons";
 import logo from "../../../assets/Logo.svg";
-import "./header.css";
+import "./header.module.css";
 
-export default function Header() {
+export default function Header(isLogined, loginHandler, user) {
   return (
     <header>
       <div className="max-width">
@@ -12,7 +12,7 @@ export default function Header() {
             <img src={logo} alt="My Blog" />
           </a>
         </h1>
-        <HeaderButtons />
+        <HeaderButtons isLogined={isLogined} loginHandler={loginHandler} profileImg={user.profileImg}/>
       </div>
     </header>
   );

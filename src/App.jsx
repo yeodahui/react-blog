@@ -3,7 +3,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import {createGlobalStyle} from "styled-components";
 import reset from "styled-reset";
 
-import Header from "./components/Organisms/PostList/Header/Header";
+import Header from "./components/Organisms/Header/Header";
 import Footer from "./components/Organisms/Footer/Footer";
 import Banner from "./components/Modules/Banner/Banner";
 
@@ -139,9 +139,13 @@ function App() {
 	const [data, setData] = useState({});
 	const [isLoaded, setIsLoaded] = useState(false);
 
+	function loginHandler() {
+		setIsLogined(!isLogined);
+	}
+	
 	useEffect(() => {
 		async function getData() {
-			const response = await fetch("./assets/data.json");
+			const response = await fetch(`${process.env.PUBLIC_URL}/data.json`);
 			const result = await response.json();
 			return result;
 		}
@@ -155,7 +159,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Header isLogined={isLogined} users={data.users} />
+      <Header isLogined={isLogined} loginHandler={loginHandler} user={data.users[1]} />
       <Banner bannerInfo={data.blog} />
 			<BrowserRouter>
 			{isLoaded && (
