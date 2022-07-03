@@ -1,11 +1,11 @@
-import React from "react";
-import {BrowserRouter, Route} from "react-router-dom";
+import {useState, useEffect} from "react";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import {createGlobalStyle} from "styled-components";
 import reset from "styled-reset";
 
-import Header from "./components/Layout/Header/Header";
-import Footer from "./components/Layout/Footer/Footer";
-import Banner from "./components/Banner/Banner";
+import Header from "./components/Organisms/PostList/Header/Header";
+import Footer from "./components/Organisms/Footer/Footer";
+import Banner from "./components/Modules/Banner/Banner";
 
 import Home from "./pages/Home/Home";
 import Post from "./pages/Post/Post";
@@ -135,14 +135,44 @@ body {
 `;
 
 function App() {
+	const [isLogined, setIsLogined] = useState(false);
+	const [data, setData] = useState({});
+	const [isLoaded, setIsLoaded] = useState(false);
+
+	useEffect(() => {
+		async function getData() {
+			const response = await fetch("./assets/data.json");
+			const result = await response.json();
+			return result;
+		}
+
+		getData().then((data) => {
+			setData(data);
+			setIsLoaded(true);
+		});
+	}, [])
+
   return (
     <>
       <GlobalStyle />
-      <Header />
-      <Banner />
-      <BrowserRouter>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/post" component={Post} />
+      <Header isLogined={isLogined} users={data.users} />
+      <Banner bannerInfo={data.blog} />
+			<BrowserRouter>
+			{isLoaded && (
+				<Switch>
+					<Route exact path="/" render={() =>
+						<Home
+							posts={data.posts}
+							users={data.users}
+						/>
+					} />
+					<Route exact path="/post/:id" render={() =>
+						<Post 
+							posts={data.posts}
+						/>
+					} />
+				</Switch>
+			)}
       </BrowserRouter>
       <Footer />
     </>
