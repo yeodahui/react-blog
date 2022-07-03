@@ -1,11 +1,15 @@
 import React from "react";
-import PostCard from "../../components/Modules/PostCard/PostCard";
+import Article from "../../components/Organisms/Article/Article";
+import "./post.css"
 
-export default function Post() {
+export default function Post({posts}) {
+  const post = posts[0];
+
   return (
-    <div>
-      post
-      <PostCard />
+    <div className="view">
+      <div className="max-width">
+        <Article post={post} />
+      </div>
     </div>
   );
 }

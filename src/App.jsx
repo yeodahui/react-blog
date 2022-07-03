@@ -160,19 +160,19 @@ function App() {
 				<BrowserRouter>
 					<Header isLogined={isLogined} loginHandler={loginHandler} user={data.users.filter(i => i.id === 1)} />
 					<Banner bannerInfo={data.blog} />
-				<Switch>
-					<Route exact path="/" render={() =>
-						<Home
-							posts={data.posts}
-							user={data.users.filter(i => i.id === 1)}
-						/>
-					} />
-					<Route exact path="/post/:id" render={() =>
-						<Post 
-							posts={data.posts}
-						/>
-					} />
-				</Switch>
+					<Switch>
+						<Route exact path="/" render={() =>
+							<Home
+								posts={data.posts}
+								user={data.users.filter(i => i.id === 1)}
+							/>
+						} />
+						<Route exact path="/post/:id" render={() =>
+							<Post 
+								posts={data.posts}
+							/>
+						} />
+					</Switch>
       </BrowserRouter>
 			)}
       <Footer />

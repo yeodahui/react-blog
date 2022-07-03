@@ -2,7 +2,7 @@ import React from "react";
 import BannerContents from "../../Atoms/BannerContents/BannerContents";
 import "./banner.css";
 
-export default function Banner(bannerInfo) {
+export default function Banner({bannerInfo}) {
   return (
     <div className="banner">
       <div className="max-width">
