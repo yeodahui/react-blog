@@ -167,7 +167,7 @@ function App() {
 					<Route exact path="/" render={() =>
 						<Home
 							posts={data.posts}
-							users={data.users}
+							users={data.users[1]}
 						/>
 					} />
 					<Route exact path="/post/:id" render={() =>

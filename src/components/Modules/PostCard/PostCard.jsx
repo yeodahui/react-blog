@@ -1,41 +1,24 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import Author from "../../Atoms/Author/Author";
 import Category from "../../Atoms/Category/Category";
-import "./postcard.css";
+import "./postcard.module.css";
 
-export default function PostCard({postImgURL, author}) {
+export default function PostCard({thumbnail, title, category, profileImg, userName, created, contents}) {
   return (
-    <Link to="/post" className="post">
       <article>
-        <img src={postImgURL} alt="" />
+        <img src={thumbnail} alt="" />
         <div className="contents-wrap">
-          <Category />
-          <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit</h3>
+          <Category categories={category} />
+          <h3>{title}</h3>
           <Author
-            progileImgURL={author.profileImgURL}
-            name={author.name}
-            date={author.date}
+            progileImgURL={profileImg}
+            name={userName}
+            date={created}
           />
           <p className="post-description">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore
-            illum nostrum perferendis voluptas, voluptate soluta corrupti dolore
-            quidem. Placeat, eaque! Exercitationem est facilis dolor quas odio
-            cum incidunt repudiandae vel. Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit. Inventore illum nostrum perferendis
-            voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque!
-            Exercitationem est facilis dolor quas odio cum incidunt repudiandae
-            vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Inventore illum nostrum perferendis voluptas, voluptate soluta
-            corrupti dolore quidem. Placeat, eaque! Exercitationem est facilis
-            dolor quas odio cum incidunt repudiandae vel. Lorem ipsum dolor sit
-            amet consectetur, adipisicing elit. Inventore illum nostrum
-            perferendis voluptas, voluptate soluta corrupti dolore quidem.
-            Placeat, eaque! Exercitationem est facilis dolor quas odio cum
-            incidunt repudiandae vel."
+            {contents[0].text}
           </p>
         </div>
       </article>
-    </Link>
   );
 }
