@@ -9,7 +9,7 @@ export default function Home({posts, user}) {
       <div className="max-width">
         <h2 className="a11y-hidden">Post</h2>
         <PostList posts={posts}/>
-        <About user={user}/>
+        <About user={user[0]}/>
       </div>
     </main>
   );
